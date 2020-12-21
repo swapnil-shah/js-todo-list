@@ -4,19 +4,49 @@
 <head>
   <title>Todo List</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    #modal.open {
+      display: block;
+    }
+
+    #overlay.open {
+      display: block;
+    }
+  </style>
   <script src="script.js" defer></script>
 </head>
 
 <body>
-  <div id="list">
+  <ul id="list">
 
-  </div>
+  </ul>
 
-  <form id="new-item-form">
-    <label for="item-input">New Item</label>
-    <input type="text" id="item-input">
-    <button type="submit">Add Item</button>
+  <form id="new-todo-form">
+    <label for="todo-input">New Todo</label>
+    <input type="text" id="todo-input">
+    <button type="submit">Add Todo</button>
   </form>
+
+  <!-- <template></template>
+  Allows to write html which does not get rendered to the page
+  This can used Javascript  -->
+  <template id="list-item-template">
+    <li class="list-item">
+      <label class="list-item-label">
+        <input type="checkbox" data-list-item-checkbox>
+        <span data-list-item-text></span>
+      </label>
+      <button data-button-delete>Delete</button>
+    </li>
+  </template>
+  <!-- <button id="open-modal-btn">Open Modal</button>
+
+  <div id="overlay"></div>
+
+  <div id="modal">
+    <h3>This is a modal</h3>
+    <button id="close-modal-btn">Close Modal</button>
+  </div> -->
 </body>
 
 </html>
